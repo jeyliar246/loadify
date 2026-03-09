@@ -1,0 +1,183 @@
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+&lt;title&gt;Loadify | Same-Day Bike Delivery in Lagos&lt;/title&gt;
+&lt;script src=&quot;https://cdn.tailwindcss.com&quot;&gt;&lt;/script&gt;
+&lt;link href=&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;link href=&quot;https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;style&gt;
+body { font-family: 'Inter', sans-serif; }
+.pop-modal { animation: slideUp 0.3s ease-out; }
+@keyframes slideUp {
+from { transform: translateY(100%); opacity: 0; }
+to { transform: translateY(0); opacity: 1; }
+}
+.booking-card {
+transition: all 0.3s ease;
+cursor: pointer;
+}
+.booking-card:hover {
+transform: translateY(-4px);
+box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+.booking-card:active { transform: scale(0.98) translateY(0); }
+.saved-address {
+transition: all 0.2s;
+position: relative;
+}
+.saved-address:hover {
+background-color: #eff6ff;
+border-color: #3b82f6;
+}
+.saved-address.selected {
+background-color: #dbeafe;
+border-color: #3b82f6;
+color: #1e40af;
+}
+.delete-saved {
+position: absolute;
+top: -8px;
+right: -8px;
+width: 20px;
+height: 20px;
+background: #ef4444;
+color: white;
+border-radius: 50%;
+font-size: 10px;
+display: none;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+}
+.saved-address:hover .delete-saved {
+display: flex;
+}
+.rider-pulse {
+animation: pulse-green 2s infinite;
+}
+@keyframes pulse-green {
+0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+70% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+.stop-item, .dropoff-item {
+animation: slideIn 0.3s ease-out;
+}
+@keyframes slideIn {
+from { opacity: 0; transform: translateX(-10px); }
+to { opacity: 1; transform: translateX(0); }
+}
+.warning-note {
+display: none;
+}
+.warning-note.show {
+display: block;
+}
+.loading-overlay {
+position: fixed;
+inset: 0;
+background: white;
+z-index: 9999;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.loading-overlay.hidden {
+display: none;
+}
+.form-modal {
+animation: fadeIn 0.3s ease-out;
+}
+@keyframes fadeIn {
+from { opacity: 0; }
+to { opacity: 1; }
+}
+.slide-in-right {
+animation: slideInRight 0.3s ease-out;
+}
+@keyframes slideInRight {
+from { transform: translateX(100%); opacity: 0; }
+to { transform: translateX(0); opacity: 1; }
+}
+.toast {
+position: fixed;
+bottom: 20px;
+left: 50%;
+transform: translateX(-50%) translateY(100px);
+background: #1f2937;
+color: white;
+padding: 12px 24px;
+border-radius: 50px;
+font-size: 14px;
+font-weight: 500;
+z-index: 9998;
+opacity: 0;
+transition: all 0.3s ease;
+box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+.toast.show {
+transform: translateX(-50%) translateY(0);
+opacity: 1;
+}
+.toast.success { background: #10b981; }
+.toast.error { background: #ef4444; }
+.toast.info { background: #3b82f6; }
+.recent-order-card {
+transition: all 0.2s;
+cursor: pointer;
+}
+.recent-order-card:hover {
+background-color: #f9fafb;
+transform: translateX(4px);
+}
+.price-tag {
+animation: pulse-price 2s infinite;
+}
+@keyframes pulse-price {
+0%, 100% { transform: scale(1); }
+50% { transform: scale(1.05); }
+}
+.tracking-step {
+position: relative;
+}
+.tracking-step::before {
+content: '';
+position: absolute;
+left: 15px;
+top: 30px;
+bottom: -20px;
+width: 2px;
+background: #e5e7eb;
+}
+.tracking-step:last-child::before {
+display: none;
+}
+.tracking-step.active::before {
+background: #3b82f6;
+}
+.offline-banner {
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+background: #ef4444;
+color: white;
+text-align: center;
+padding: 8px;
+font-size: 14px;
+font-weight: 500;
+z-index: 9999;
+transform: translateY(-100%);
+transition: transform 0.3s ease;
+}
+.offline-banner.show {
+transform: translateY(0);
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body class=&quot;bg-gray-50 text-gray-800&quot;&gt;
+PLACEHOLDER_BODY
+&lt;/body&gt;
+&lt;/html&gt;
